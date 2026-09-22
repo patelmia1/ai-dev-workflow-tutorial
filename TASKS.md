@@ -10,14 +10,6 @@ This file tracks all work for the E-Commerce Analytics dashboard (ShopSmart Sale
 
 ## To Do
 
-### TASK-2: Data loading and basic structure
-Load and validate the transaction data from `data/sales-data.csv`.
-- [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
-- [ ] Loading is wrapped in a reusable function/module, not inlined ad hoc
-- [ ] App shows no errors when the data loads
-
-Commit:
-
 ### TASK-3: KPI cards implementation
 Display Total Sales and Total Orders prominently at the top of the dashboard.
 - [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
@@ -59,6 +51,14 @@ Deploy the finished dashboard so stakeholders can access it via a public URL.
 Commit:
 
 ## In Progress
+
+### TASK-2: Data loading and basic structure
+Load and validate the transaction data from `data/sales-data.csv`.
+- [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
+- [ ] Loading is wrapped in a reusable function/module, not inlined ad hoc
+- [ ] App shows no errors when the data loads
+
+Commit:
 
 ## Done
 
