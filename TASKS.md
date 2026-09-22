@@ -71,5 +71,5 @@ Add a line chart showing sales over time.
 - [x] Chart includes interactive tooltips showing exact values
 - [x] Chart renders without errors using the loaded CSV data
 
-Commit: 7b4414b
-Notes: clean
+Commit: fe26670
+Notes: You changed the granularity control from a radio (as specced in the plan) to a toggle switch after this task was marked done.
