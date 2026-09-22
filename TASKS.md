@@ -52,14 +52,6 @@ Commit:
 
 ## In Progress
 
-### TASK-2: Data loading and basic structure
-Load and validate the transaction data from `data/sales-data.csv`.
-- [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
-- [ ] Loading is wrapped in a reusable function/module, not inlined ad hoc
-- [ ] App shows no errors when the data loads
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -70,3 +62,12 @@ Set up the Python project structure and dependencies needed to build the dashboa
 
 Commit: 7fe8cc9
 Notes: clean
+
+### TASK-2: Data loading and basic structure
+Load and validate the transaction data from `data/sales-data.csv`.
+- [x] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
+- [x] Loading is wrapped in a reusable function/module, not inlined ad hoc
+- [x] App shows no errors when the data loads
+
+Commit: 4ead56c
+Notes: Claude added `pytest.ini` (`pythonpath = .`), not called for in the plan — without it, the plain `pytest` command from the plan docs fails with `ModuleNotFoundError` since `tests/` has no `__init__.py` and pytest's default import mode won't add the repo root to `sys.path` on its own.
