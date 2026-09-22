@@ -10,14 +10,6 @@ This file tracks all work for the E-Commerce Analytics dashboard (ShopSmart Sale
 
 ## To Do
 
-### TASK-3: KPI cards implementation
-Display Total Sales and Total Orders prominently at the top of the dashboard.
-- [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
-- [ ] Total Orders is calculated as the count of transactions and formatted with separators
-- [ ] KPI values match expected output in the PRD (~$116,500 / 482 orders)
-
-Commit:
-
 ### TASK-4: Sales trend chart
 Add a line chart showing sales over time.
 - [ ] Line chart plots sales amount on the Y-axis against time on the X-axis
@@ -51,6 +43,14 @@ Deploy the finished dashboard so stakeholders can access it via a public URL.
 Commit:
 
 ## In Progress
+
+### TASK-3: KPI cards implementation
+Display Total Sales and Total Orders prominently at the top of the dashboard.
+- [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
+- [ ] Total Orders is calculated as the count of transactions and formatted with separators
+- [ ] KPI values match expected output in the PRD (~$116,500 / 482 orders)
+
+Commit:
 
 ## Done
 
