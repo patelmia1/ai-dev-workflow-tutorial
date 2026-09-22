@@ -28,14 +28,6 @@ Commit:
 
 ## In Progress
 
-### TASK-5: Category and region breakdowns
-Add bar charts showing sales by product category and by region.
-- [ ] Category bar chart shows all 5 categories, sorted by sales value (highest to lowest)
-- [ ] Region bar chart shows all 4 regions, sorted by sales value (highest to lowest)
-- [ ] Both charts have interactive tooltips with exact values
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -73,3 +65,12 @@ Add a line chart showing sales over time.
 
 Commit: fe26670
 Notes: You changed the granularity control from a radio (as specced in the plan) to a toggle switch after this task was marked done.
+
+### TASK-5: Category and region breakdowns
+Add bar charts showing sales by product category and by region.
+- [x] Category bar chart shows all 5 categories, sorted by sales value (highest to lowest)
+- [x] Region bar chart shows all 4 regions, sorted by sales value (highest to lowest)
+- [x] Both charts have interactive tooltips with exact values
+
+Commit: 91eb17f
+Notes: clean
