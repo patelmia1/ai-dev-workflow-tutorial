@@ -44,14 +44,6 @@ Commit:
 
 ## In Progress
 
-### TASK-3: KPI cards implementation
-Display Total Sales and Total Orders prominently at the top of the dashboard.
-- [ ] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
-- [ ] Total Orders is calculated as the count of transactions and formatted with separators
-- [ ] KPI values match expected output in the PRD (~$116,500 / 482 orders)
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -71,3 +63,12 @@ Load and validate the transaction data from `data/sales-data.csv`.
 
 Commit: 4ead56c
 Notes: Claude added `pytest.ini` (`pythonpath = .`), not called for in the plan — without it, the plain `pytest` command from the plan docs fails with `ModuleNotFoundError` since `tests/` has no `__init__.py` and pytest's default import mode won't add the repo root to `sys.path` on its own.
+
+### TASK-3: KPI cards implementation
+Display Total Sales and Total Orders prominently at the top of the dashboard.
+- [x] Total Sales is calculated as the sum of `total_amount` and formatted as currency (e.g. $116,500)
+- [x] Total Orders is calculated as the count of transactions and formatted with separators
+- [x] KPI values match expected output in the PRD (~$116,500 / 482 orders)
+
+Commit: 803e1cb
+Notes: clean
