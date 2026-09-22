@@ -60,12 +60,13 @@ Commit:
 
 ## In Progress
 
+## Done
+
 ### TASK-1: Environment setup and project initialization
 Set up the Python project structure and dependencies needed to build the dashboard.
 - [x] `requirements.txt` includes streamlit, pandas, and plotly
 - [x] `app.py` exists and runs with `streamlit run app.py` showing a placeholder page
 - [x] Project structure matches the architecture in the PRD (e.g. `data/` for `sales-data.csv`)
 
-Commit:
-
-## Done
+Commit: 7fe8cc9
+Notes: clean
