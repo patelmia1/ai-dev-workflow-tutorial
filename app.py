@@ -1,6 +1,7 @@
 import streamlit as st
 
-from calculations import load_sales_data, total_orders, total_sales
+from calculations import load_sales_data, sales_trend, total_orders, total_sales
+from charts import build_trend_chart
 
 DATA_PATH = "data/sales-data.csv"
 
@@ -18,3 +19,9 @@ df = get_data()
 col1, col2 = st.columns(2)
 col1.metric("Total Sales", f"${total_sales(df):,.0f}")
 col2.metric("Total Orders", f"{total_orders(df):,}")
+
+st.subheader("Sales Trend")
+granularity_label = st.radio("Granularity", ["Monthly", "Daily"], horizontal=True)
+granularity = "monthly" if granularity_label == "Monthly" else "daily"
+trend_df = sales_trend(df, granularity=granularity)
+st.plotly_chart(build_trend_chart(trend_df, granularity), use_container_width=True)
