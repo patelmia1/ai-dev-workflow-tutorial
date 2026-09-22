@@ -10,14 +10,6 @@ This file tracks all work for the E-Commerce Analytics dashboard (ShopSmart Sale
 
 ## To Do
 
-### TASK-6: Testing and refinement
-Verify the dashboard meets all Phase 1 acceptance criteria and polish the presentation.
-- [ ] All acceptance criteria in the PRD are verified against the running app
-- [ ] Dashboard loads within 5 seconds and charts render within 2 seconds
-- [ ] Layout and labels are clean enough for an executive presentation
-
-Commit:
-
 ### TASK-7: Deployment to Streamlit Community Cloud
 Deploy the finished dashboard so stakeholders can access it via a public URL.
 - [ ] App is deployed to Streamlit Community Cloud
@@ -27,6 +19,14 @@ Deploy the finished dashboard so stakeholders can access it via a public URL.
 Commit:
 
 ## In Progress
+
+### TASK-6: Testing and refinement
+Verify the dashboard meets all Phase 1 acceptance criteria and polish the presentation.
+- [ ] All acceptance criteria in the PRD are verified against the running app
+- [ ] Dashboard loads within 5 seconds and charts render within 2 seconds
+- [ ] Layout and labels are clean enough for an executive presentation
+
+Commit:
 
 ## Done
 
