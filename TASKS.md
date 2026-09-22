@@ -36,14 +36,6 @@ Commit:
 
 ## In Progress
 
-### TASK-4: Sales trend chart
-Add a line chart showing sales over time.
-- [ ] Line chart plots sales amount on the Y-axis against time on the X-axis
-- [ ] Chart includes interactive tooltips showing exact values
-- [ ] Chart renders without errors using the loaded CSV data
-
-Commit:
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -71,4 +63,13 @@ Display Total Sales and Total Orders prominently at the top of the dashboard.
 - [x] KPI values match expected output in the PRD (~$116,500 / 482 orders)
 
 Commit: 803e1cb
+Notes: clean
+
+### TASK-4: Sales trend chart
+Add a line chart showing sales over time.
+- [x] Line chart plots sales amount on the Y-axis against time on the X-axis
+- [x] Chart includes interactive tooltips showing exact values
+- [x] Chart renders without errors using the loaded CSV data
+
+Commit: 7b4414b
 Notes: clean
