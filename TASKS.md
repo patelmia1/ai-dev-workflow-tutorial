@@ -10,14 +10,6 @@ This file tracks all work for the E-Commerce Analytics dashboard (ShopSmart Sale
 
 ## To Do
 
-### TASK-4: Sales trend chart
-Add a line chart showing sales over time.
-- [ ] Line chart plots sales amount on the Y-axis against time on the X-axis
-- [ ] Chart includes interactive tooltips showing exact values
-- [ ] Chart renders without errors using the loaded CSV data
-
-Commit:
-
 ### TASK-5: Category and region breakdowns
 Add bar charts showing sales by product category and by region.
 - [ ] Category bar chart shows all 5 categories, sorted by sales value (highest to lowest)
@@ -43,6 +35,14 @@ Deploy the finished dashboard so stakeholders can access it via a public URL.
 Commit:
 
 ## In Progress
+
+### TASK-4: Sales trend chart
+Add a line chart showing sales over time.
+- [ ] Line chart plots sales amount on the Y-axis against time on the X-axis
+- [ ] Chart includes interactive tooltips showing exact values
+- [ ] Chart renders without errors using the loaded CSV data
+
+Commit:
 
 ## Done
 
