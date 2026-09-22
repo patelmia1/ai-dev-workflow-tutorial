@@ -1,6 +1,6 @@
 import streamlit as st
 
-from calculations import load_sales_data
+from calculations import load_sales_data, total_orders, total_sales
 
 DATA_PATH = "data/sales-data.csv"
 
@@ -14,4 +14,7 @@ def get_data():
 
 
 df = get_data()
-st.write(f"Loaded {len(df)} transactions.")
+
+col1, col2 = st.columns(2)
+col1.metric("Total Sales", f"${total_sales(df):,.0f}")
+col2.metric("Total Orders", f"{total_orders(df):,}")
