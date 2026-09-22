@@ -2,7 +2,14 @@ from pathlib import Path
 
 import pytest
 
-from calculations import load_sales_data, sales_trend, total_orders, total_sales
+from calculations import (
+    load_sales_data,
+    sales_by_category,
+    sales_by_region,
+    sales_trend,
+    total_orders,
+    total_sales,
+)
 
 DATA_PATH = Path(__file__).resolve().parent.parent / "data" / "sales-data.csv"
 
@@ -43,3 +50,21 @@ def test_sales_trend_invalid_granularity_raises():
     df = load_sales_data(DATA_PATH)
     with pytest.raises(ValueError):
         sales_trend(df, granularity="yearly")
+
+
+def test_sales_by_category_sorted_descending_with_top_electronics():
+    df = load_sales_data(DATA_PATH)
+    result = sales_by_category(df)
+    assert result.iloc[0]["category"] == "Electronics"
+    assert round(result.iloc[0]["total_amount"], 2) == 42683.67
+    amounts = list(result["total_amount"])
+    assert amounts == sorted(amounts, reverse=True)
+
+
+def test_sales_by_region_has_four_regions_sorted_descending():
+    df = load_sales_data(DATA_PATH)
+    result = sales_by_region(df)
+    assert set(result["region"]) == {"North", "South", "East", "West"}
+    assert result.iloc[0]["region"] == "North"
+    amounts = list(result["total_amount"])
+    assert amounts == sorted(amounts, reverse=True)

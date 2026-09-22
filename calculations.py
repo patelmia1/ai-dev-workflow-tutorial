@@ -24,3 +24,13 @@ def sales_trend(df, granularity="monthly"):
     trend = df.groupby(period)["total_amount"].sum().reset_index()
     trend.columns = ["period", "total_amount"]
     return trend.sort_values("period").reset_index(drop=True)
+
+
+def sales_by_category(df):
+    grouped = df.groupby("category")["total_amount"].sum()
+    return grouped.sort_values(ascending=False).reset_index()
+
+
+def sales_by_region(df):
+    grouped = df.groupby("region")["total_amount"].sum()
+    return grouped.sort_values(ascending=False).reset_index()
