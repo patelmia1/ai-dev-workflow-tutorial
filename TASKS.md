@@ -10,15 +10,19 @@ This file tracks all work for the E-Commerce Analytics dashboard (ShopSmart Sale
 
 ## To Do
 
+## In Progress
+
 ### TASK-7: Deployment to Streamlit Community Cloud
 Deploy the finished dashboard so stakeholders can access it via a public URL.
-- [ ] App is deployed to Streamlit Community Cloud
+
+Deployed URL: https://patelmia1-ai-dev-workflow-tutorial-app-tagmf8.streamlit.app/
+
+- [x] App is deployed to Streamlit Community Cloud
 - [ ] Public URL loads the dashboard without errors
 - [ ] Deployed version matches the locally verified app from TASK-6
 
 Commit:
-
-## In Progress
+Notes: The URL currently redirects to Streamlit's login wall (`share.streamlit.io/-/auth/app`) instead of loading the dashboard — the app's sharing setting looks to be private rather than public. In the app's Streamlit Community Cloud settings, switch sharing to public/"anyone can view" so it's reachable without a Streamlit account, per the PRD's NFR-5. Separately, TASK-6 itself is still In Progress, so "matches the locally verified app from TASK-6" can't be confirmed yet either.
 
 ### TASK-6: Testing and refinement
 Verify the dashboard meets all Phase 1 acceptance criteria and polish the presentation.
