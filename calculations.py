@@ -1,3 +1,5 @@
+"""Pure aggregation functions over the sales DataFrame — no Streamlit calls here."""
+
 import pandas as pd
 
 

@@ -1,3 +1,5 @@
+"""Pure Plotly figure builders — no Streamlit calls here."""
+
 import plotly.express as px
 
 
