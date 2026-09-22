@@ -10,14 +10,6 @@ This file tracks all work for the E-Commerce Analytics dashboard (ShopSmart Sale
 
 ## To Do
 
-### TASK-1: Environment setup and project initialization
-Set up the Python project structure and dependencies needed to build the dashboard.
-- [ ] `requirements.txt` includes streamlit, pandas, and plotly
-- [ ] `app.py` exists and runs with `streamlit run app.py` showing a placeholder page
-- [ ] Project structure matches the architecture in the PRD (e.g. `data/` for `sales-data.csv`)
-
-Commit:
-
 ### TASK-2: Data loading and basic structure
 Load and validate the transaction data from `data/sales-data.csv`.
 - [ ] CSV loads into a Pandas DataFrame with correct column types (date, numeric, categorical)
@@ -67,5 +59,13 @@ Deploy the finished dashboard so stakeholders can access it via a public URL.
 Commit:
 
 ## In Progress
+
+### TASK-1: Environment setup and project initialization
+Set up the Python project structure and dependencies needed to build the dashboard.
+- [x] `requirements.txt` includes streamlit, pandas, and plotly
+- [x] `app.py` exists and runs with `streamlit run app.py` showing a placeholder page
+- [x] Project structure matches the architecture in the PRD (e.g. `data/` for `sales-data.csv`)
+
+Commit:
 
 ## Done
