@@ -36,6 +36,7 @@ Work is tracked in `TASKS.md` as milestones `TASK-1`..`TASK-7`, organized into T
 - Moving a task to "In Progress" and later to "Done" are each their own commit, kept separate from the implementation commit(s) — see `git log` for the established pattern, e.g. `TASK-3: mark in progress on the board` / `TASK-3: add KPI cards for total sales and orders` / `TASK-3: mark done on the board`.
 - Every commit message includes its milestone ID.
 - When a task is marked Done, `Commit:` points to the implementation commit (not the board-move commit), and `Notes:` records anything that deviated from the plan or was changed afterward — or `clean` if nothing did. Verify each acceptance criterion against actual output before checking it off; don't just trust the plan's example values.
+- Some acceptance criteria are inherently visual/subjective (e.g. TASK-6's "professional appearance suitable for executive presentation," which is also literally in the PRD's own Acceptance Criteria list) and can't be confirmed from a terminal. Don't check those boxes yourself — leave the task in "In Progress," record in `Notes:` exactly which criteria need the user's own look and why, and only move it to Done after they confirm.
 - The step-by-step instructions per milestone (including each step's expected command output) live in `docs/superpowers/plans/2026-09-21-sales-dashboard.md`. The architecture rationale lives in `docs/superpowers/specs/2026-09-21-sales-dashboard-design.md`. Both derive from `prd/ecommerce-analytics.md`.
 - TASK-7 (deployment to Streamlit Community Cloud) is explicitly out of scope to execute from this repo's automated workflow — it's done manually by the user, from `main`, after the branch is reviewed and merged.
 
@@ -45,6 +46,7 @@ Rules distilled from `TASKS.md` `Notes:` lines — read before repeating the sam
 
 - Bare `pytest` needs `pythonpath = .` (via `pytest.ini`) to resolve top-level modules from `tests/`, since there's no `__init__.py` there. This isn't in the implementation plan's own commands — if a future plan step's `pytest` command mysteriously fails with `ModuleNotFoundError` for a module that clearly exists, check `pytest.ini` before assuming the code is broken. (From TASK-2.)
 - The plan's UI widget choices (e.g. `st.radio` for the granularity control) are a starting point, not a fixed spec — the user changed it to `st.toggle` after TASK-4 was already marked Done. Don't assume `app.py` still matches what the plan or design spec describes; check the actual file. When re-verifying a "Done" task's acceptance criteria, confirm against current code, not the plan's original snippet. (From TASK-4.)
+- The implementation plan's own expected-output numbers can be stale: its Task 6 step 1 says "13 total" tests, but summing what Tasks 2-5 actually specify gives 12 (`test_calculations.py` + `test_charts.py`). Trust the current test suite's real count over a plan doc's stated expectation. (From TASK-6.)
 
 ## Testing conventions
 
