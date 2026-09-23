@@ -12,18 +12,6 @@ This file tracks all work for the E-Commerce Analytics dashboard (ShopSmart Sale
 
 ## In Progress
 
-### TASK-7: Deployment to Streamlit Community Cloud
-Deploy the finished dashboard so stakeholders can access it via a public URL.
-
-Deployed URL: https://patelmia1-ai-dev-workflow-tutorial-app-tagmf8.streamlit.app/
-
-- [x] App is deployed to Streamlit Community Cloud
-- [ ] Public URL loads the dashboard without errors
-- [ ] Deployed version matches the locally verified app from TASK-6
-
-Commit:
-Notes: The URL currently redirects to Streamlit's login wall (`share.streamlit.io/-/auth/app`) instead of loading the dashboard — the app's sharing setting looks to be private rather than public. In the app's Streamlit Community Cloud settings, switch sharing to public/"anyone can view" so it's reachable without a Streamlit account, per the PRD's NFR-5. Separately, TASK-6 itself is still In Progress, so "matches the locally verified app from TASK-6" can't be confirmed yet either.
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -79,3 +67,15 @@ Verify the dashboard meets all Phase 1 acceptance criteria and polish the presen
 
 Commit: ad24157
 Notes: Full suite passes (12/12 — the plan's step 1 says "13 total" but summing the tests actually specified in Tasks 2-5 gives 12; that's a stale count in the plan doc, not a gap here). Load time confirmed fast (page responds in ~2ms locally) and no errors in the server log (correction: there *was* a `use_container_width` deprecation warning on Streamlit 1.64 — fixed in 3b5cfd7, see below). The two visual criteria ("all PRD acceptance criteria verified", "professional appearance") were confirmed by you in the browser, including the post-verification layout below. Changed after verification: e4e9ce9 added hover-reveal borders to the KPI/chart cards (committed without a milestone ID), 37f9d8e extended that CSS to also target `stVerticalBlockBorderWrapper` for older Streamlit versions, and 3b5cfd7 replaced the deprecated `use_container_width=True` with `width="stretch"`, which needs Streamlit 1.51+, so `requirements.txt` now pins `streamlit>=1.51` (up from 1.38) and the wrapper selector was dropped again (that element was gone by 1.47). Verified on 1.51.0 and 1.64.0: tests still 12/12 and the page renders without exceptions, and you confirmed the updated layout (cards borderless until hovered) looks good.
+
+### TASK-7: Deployment to Streamlit Community Cloud
+Deploy the finished dashboard so stakeholders can access it via a public URL.
+
+Deployed URL: https://patelmia1-ai-dev-workflow-tutorial-app-tagmf8.streamlit.app/
+
+- [x] App is deployed to Streamlit Community Cloud
+- [x] Public URL loads the dashboard without errors
+- [x] Deployed version matches the locally verified app from TASK-6
+
+Commit: 5ed75e0
+Notes: Deployed manually from `main` (5ed75e0, the merge that brought in the TASK-6 follow-ups). The app was first set to private and was switched to public; re-checked signed out on 2026-09-22 — the URL returns 200 on the app after Streamlit's cookie handshake (no sign-in page) and `/~/+/_stcore/health` returns `ok`. You confirmed the live dashboard looks good. Aside: an earlier signed-out check used `curl` without a cookie jar, which sees the auth redirect even for public apps, so it could not by itself distinguish public from private.
