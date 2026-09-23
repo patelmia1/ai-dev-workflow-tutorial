@@ -24,15 +24,6 @@ Deployed URL: https://patelmia1-ai-dev-workflow-tutorial-app-tagmf8.streamlit.ap
 Commit:
 Notes: The URL currently redirects to Streamlit's login wall (`share.streamlit.io/-/auth/app`) instead of loading the dashboard — the app's sharing setting looks to be private rather than public. In the app's Streamlit Community Cloud settings, switch sharing to public/"anyone can view" so it's reachable without a Streamlit account, per the PRD's NFR-5. Separately, TASK-6 itself is still In Progress, so "matches the locally verified app from TASK-6" can't be confirmed yet either.
 
-### TASK-6: Testing and refinement
-Verify the dashboard meets all Phase 1 acceptance criteria and polish the presentation.
-- [ ] All acceptance criteria in the PRD are verified against the running app
-- [x] Dashboard loads within 5 seconds and charts render within 2 seconds
-- [ ] Layout and labels are clean enough for an executive presentation
-
-Commit: ad24157
-Notes: Full suite passes (12/12 — the plan's step 1 says "13 total" but summing the tests actually specified in Tasks 2-5 gives 12; that's a stale count in the plan doc, not a gap here). Load time confirmed fast (page responds in ~2ms locally) and no errors in the server log (correction: there *was* a `use_container_width` deprecation warning on Streamlit 1.64 — fixed in 3b5cfd7, see below). Left unchecked: "all PRD acceptance criteria verified" and "professional appearance" both depend on visually inspecting the rendered charts/layout in a browser, which I can't do from here — please take a look at http://localhost:8501 and confirm before this moves to Done. Changed after verification: e4e9ce9 added hover-reveal borders to the KPI/chart cards (committed without a milestone ID), 37f9d8e extended that CSS to also target `stVerticalBlockBorderWrapper` for older Streamlit versions, and 3b5cfd7 replaced the deprecated `use_container_width=True` with `width="stretch"`, which needs Streamlit 1.51+, so `requirements.txt` now pins `streamlit>=1.51` (up from 1.38) and the wrapper selector was dropped again (that element was gone by 1.47). Verified on 1.51.0 and 1.64.0: tests still 12/12 and the page renders without exceptions, but the visual check above should be done against this updated layout (cards borderless until hovered).
-
 ## Done
 
 ### TASK-1: Environment setup and project initialization
@@ -79,3 +70,12 @@ Add bar charts showing sales by product category and by region.
 
 Commit: 91eb17f
 Notes: clean
+
+### TASK-6: Testing and refinement
+Verify the dashboard meets all Phase 1 acceptance criteria and polish the presentation.
+- [x] All acceptance criteria in the PRD are verified against the running app
+- [x] Dashboard loads within 5 seconds and charts render within 2 seconds
+- [x] Layout and labels are clean enough for an executive presentation
+
+Commit: ad24157
+Notes: Full suite passes (12/12 — the plan's step 1 says "13 total" but summing the tests actually specified in Tasks 2-5 gives 12; that's a stale count in the plan doc, not a gap here). Load time confirmed fast (page responds in ~2ms locally) and no errors in the server log (correction: there *was* a `use_container_width` deprecation warning on Streamlit 1.64 — fixed in 3b5cfd7, see below). The two visual criteria ("all PRD acceptance criteria verified", "professional appearance") were confirmed by you in the browser, including the post-verification layout below. Changed after verification: e4e9ce9 added hover-reveal borders to the KPI/chart cards (committed without a milestone ID), 37f9d8e extended that CSS to also target `stVerticalBlockBorderWrapper` for older Streamlit versions, and 3b5cfd7 replaced the deprecated `use_container_width=True` with `width="stretch"`, which needs Streamlit 1.51+, so `requirements.txt` now pins `streamlit>=1.51` (up from 1.38) and the wrapper selector was dropped again (that element was gone by 1.47). Verified on 1.51.0 and 1.64.0: tests still 12/12 and the page renders without exceptions, and you confirmed the updated layout (cards borderless until hovered) looks good.
