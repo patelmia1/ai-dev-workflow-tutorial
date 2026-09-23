@@ -18,13 +18,11 @@ st.title("ShopSmart Sales Dashboard")
 st.markdown(
     """
     <style>
-    div[data-testid="stVerticalBlockBorderWrapper"],
     div[data-testid="stVerticalBlock"] {
         border-color: transparent !important;
         border-radius: 0.5rem;
         transition: border-color 0.2s ease;
     }
-    div[data-testid="stVerticalBlockBorderWrapper"]:hover,
     div[data-testid="stVerticalBlock"]:hover {
         border-color: #d3d3d3 !important;
     }
@@ -54,13 +52,13 @@ with st.container(border=True):
     show_daily = st.toggle("Daily")
     granularity = "daily" if show_daily else "monthly"
     trend_df = sales_trend(df, granularity=granularity)
-    st.plotly_chart(build_trend_chart(trend_df, granularity), use_container_width=True)
+    st.plotly_chart(build_trend_chart(trend_df, granularity), width="stretch")
 
 st.subheader("Breakdowns")
 col3, col4 = st.columns(2)
 with col3:
     with st.container(border=True):
-        st.plotly_chart(build_category_chart(sales_by_category(df)), use_container_width=True)
+        st.plotly_chart(build_category_chart(sales_by_category(df)), width="stretch")
 with col4:
     with st.container(border=True):
-        st.plotly_chart(build_region_chart(sales_by_region(df)), use_container_width=True)
+        st.plotly_chart(build_region_chart(sales_by_region(df)), width="stretch")
