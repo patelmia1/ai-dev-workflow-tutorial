@@ -18,11 +18,13 @@ st.title("ShopSmart Sales Dashboard")
 st.markdown(
     """
     <style>
+    div[data-testid="stVerticalBlockBorderWrapper"],
     div[data-testid="stVerticalBlock"] {
         border-color: transparent !important;
         border-radius: 0.5rem;
         transition: border-color 0.2s ease;
     }
+    div[data-testid="stVerticalBlockBorderWrapper"]:hover,
     div[data-testid="stVerticalBlock"]:hover {
         border-color: #d3d3d3 !important;
     }
