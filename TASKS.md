@@ -27,7 +27,7 @@ Verify the dashboard meets all Phase 1 acceptance criteria and polish the presen
 - [ ] Layout and labels are clean enough for an executive presentation
 
 Commit: ad24157
-Notes: Full suite passes (12/12 — the plan's step 1 says "13 total" but summing the tests actually specified in Tasks 2-5 gives 12; that's a stale count in the plan doc, not a gap here). Load time confirmed fast (page responds in ~2ms locally) and no errors/warnings in the server log. Left unchecked: "all PRD acceptance criteria verified" and "professional appearance" both depend on visually inspecting the rendered charts/layout in a browser, which I can't do from here — please take a look at http://localhost:8501 and confirm before this moves to Done.
+Notes: Full suite passes (12/12 — the plan's step 1 says "13 total" but summing the tests actually specified in Tasks 2-5 gives 12; that's a stale count in the plan doc, not a gap here). Load time confirmed fast (page responds in ~2ms locally) and no errors/warnings in the server log. Left unchecked: "all PRD acceptance criteria verified" and "professional appearance" both depend on visually inspecting the rendered charts/layout in a browser, which I can't do from here — please take a look at http://localhost:8501 and confirm before this moves to Done. Changed after verification: e4e9ce9 added hover-reveal borders to the KPI/chart cards (committed without a milestone ID), and 37f9d8e extended that CSS to also target `stVerticalBlockBorderWrapper` so it works on older Streamlit versions still allowed by `requirements.txt`. Tests still 12/12 and the page renders without exceptions, but the visual check above should be done against this updated layout (cards borderless until hovered).
 
 ## Done
 
